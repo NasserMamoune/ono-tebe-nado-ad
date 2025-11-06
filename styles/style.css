@@ -1,1 +1,376 @@
-/* место для вашего кода */
+* {
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header, main, .site-footer {
+  width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  height: 293px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .site-logo img {
+  width: 148px;
+  margin-right: 270px;
+}
+
+header .navigation ul {
+  display: flex;
+  list-style-type: circle;
+  text-transform: lowercase;
+}
+
+header .navigation ul li {
+  margin-right: 22px;
+  letter-spacing: 1px;
+}
+
+header .navigation ul li:first-child {
+  list-style-type: none;
+}
+
+header .navigation ul li a {
+  color: black;
+}
+
+a.nav-active {
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+}
+
+.contact-info p {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  line-height: 21px;
+}
+
+.contact-info p:last-child {
+  text-decoration: none;
+}
+
+.hero {
+  height: 757px;
+  padding: 165px 50px 50px 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero h1,
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.hero h1 span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 100px;
+  color: white;
+}
+
+.hero h1 span + span {
+  text-align: center;
+}
+
+.hero h1 span + span + span {
+  text-align: right;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: min(1000px, 92vw);
+  padding: 10px 16px;
+  gap: 16px;
+  margin-top: 340px;
+}
+
+.hero-content .cta-button {
+  width: 256px;
+  height: 51px;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  border: 1px solid white;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .15s ease;
+  background: transparent;
+}
+
+.hero-content p {
+  margin: 0;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  font-size: 22px;
+  color: white;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lots-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.lots-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.lot-item {
+  flex: 1 1 334px;
+  min-height: 420px;
+}
+
+.lot-link,
+.lot-card {
+  display: block;
+  height: 100%;
+}
+
+.lot-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lots-section .section-title {
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: black;
+  padding-bottom: 30px;
+}
+
+.lot-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  color: #fff;
+}
+
+.card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.85) 70%);
+  z-index: 1;
+}
+
+.card-heading,
+.card-description {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.card-heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.25;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.view-more {
+  display: inline-block;
+  font-weight: 400;
+  margin-left: 24px;
+  margin-bottom: 100px;
+  font-size: 20px;
+  color: #000000;
+  text-decoration: underline;
+  position: relative;
+  z-index: 1;
+}
+
+.about-section {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 240px 1fr;
+  gap: 28px 32px;
+  margin: 60px 0;
+}
+
+.about-logo {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: #000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-left: 40px;
+}
+
+.about-logo img {
+  width: 68%;
+  height: auto;
+}
+
+.about-text {
+  max-width: 720px;
+  margin-left: 100px;
+}
+
+.about-heading {
+  margin: 100px 0 95px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: .02em;
+}
+
+.about-content {
+  margin-top: 30px;
+}
+
+.about-text p {
+  margin: 0 0 16px;
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+}
+
+.about-text .second-paragraph {
+  padding-top: 15px;
+}
+
+.site-footer {
+  margin-top: 150px;
+  padding: 28px 20px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 32px;
+  align-items: start;
+  color: #111;
+}
+
+.footer-contacts {
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.footer-contacts p {
+  margin: 0 0 8px;
+}
+
+.footer-contacts a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-contacts a:hover {
+  opacity: .85;
+}
+
+.footer-nav {
+  justify-self: center;
+}
+
+.footer-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: grid;
+  row-gap: 8px;
+}
+
+.footer-link {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-link:hover {
+  opacity: .85;
+}
+
+.footer-link-active {
+  text-decoration: none;
+}
+
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.social-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 50%;
+  padding: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}

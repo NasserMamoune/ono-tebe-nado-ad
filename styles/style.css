@@ -15,30 +15,47 @@ header {
   height: 293px;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 10;
+  background: #fff;
 }
 
 header .site-logo img {
   width: 148px;
-  margin-right: 270px;
+  margin-right: 137px;
 }
 
 header .navigation ul {
   display: flex;
-  list-style-type: circle;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-transform: lowercase;
 }
 
 header .navigation ul li {
-  margin-right: 22px;
+  margin: 0;
   letter-spacing: 1px;
 }
 
-header .navigation ul li:first-child {
-  list-style-type: none;
+header .navigation ul li + li {
+  position: relative;
+  padding-left: 18px;
+}
+
+header .navigation ul li + li::before {
+  content: "•";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
 }
 
 header .navigation ul li a {
-  color: black;
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 a.nav-active {
@@ -46,25 +63,28 @@ a.nav-active {
 }
 
 a:hover {
-  color: blue;
+  color: #2f6fff;
 }
 
 .contact-info p {
-  color: #111;
+  color: #000;
   text-decoration: underline;
   text-underline-offset: 3px;
-  line-height: 21px;
+  line-height: 24px;
+  font-size: 18px;
 }
 
 .contact-info p:last-child {
   text-decoration: none;
 }
 
+/* Hero */
 .hero {
   height: 757px;
   padding: 165px 50px 50px 50px;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .hero-bg {
@@ -79,28 +99,31 @@ a:hover {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
 .hero h1,
 .hero .hero-content {
   position: relative;
-  z-index: 2;
-  color: white;
+  z-index: 1;
+  color: #fff;
 }
 
 .hero h1 span {
   display: block;
   text-transform: uppercase;
+  font-weight: 700;
   font-size: 100px;
-  color: white;
+  line-height: 1.15;
+  letter-spacing: 0.3em;
 }
 
 .hero h1 span + span {
   text-align: center;
 }
 
+hero h1 span + span + span,
 .hero h1 span + span + span {
   text-align: right;
 }
@@ -109,24 +132,21 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  width: min(1000px, 92vw);
+  width: 1000px;
   padding: 10px 16px;
   gap: 16px;
-  margin-top: 340px;
+  margin-top: 130px;
 }
 
 .hero-content .cta-button {
   width: 256px;
   height: 51px;
-  color: white;
+  color: #fff;
   font-size: 22px;
   font-weight: 500;
-  border: 1px solid white;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .15s ease;
+  border: 1px solid #fff;
   background: transparent;
+  text-transform: uppercase;
 }
 
 .hero-content p {
@@ -134,16 +154,24 @@ a:hover {
   flex: 1 1 auto;
   white-space: nowrap;
   font-size: 22px;
-  color: white;
-  letter-spacing: .20em;
+  color: #fff;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* Lots */
 .lots-section {
   margin-top: 100px;
   margin-bottom: 100px;
+}
+
+.lots-section .section-title {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  padding-bottom: 30px;
 }
 
 .lots-grid {
@@ -158,6 +186,7 @@ a:hover {
 .lot-item {
   flex: 1 1 334px;
   min-height: 420px;
+  max-width: 334px;
 }
 
 .lot-link,
@@ -171,14 +200,6 @@ a:hover {
   text-decoration: none;
 }
 
-.lots-section .section-title {
-  font-size: 40px;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: black;
-  padding-bottom: 30px;
-}
-
 .lot-card {
   position: relative;
   overflow: hidden;
@@ -187,6 +208,7 @@ a:hover {
   justify-content: space-between;
   padding: 24px;
   color: #fff;
+  min-height: 596px;
 }
 
 .card-image {
@@ -201,7 +223,7 @@ a:hover {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.85) 70%);
+  background: rgba(0,0,0,.6);
   z-index: 1;
 }
 
@@ -216,32 +238,33 @@ a:hover {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 22px;
-  line-height: 1.25;
+  line-height: 1.2;
   text-decoration: underline;
   text-underline-offset: 4px;
-  margin-bottom: 12px;
+  margin-top: 24px;
 }
 
 .card-description {
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.45;
-  color: white;
-  padding-bottom: 10px;
+  line-height: 1.2;
+  margin-bottom: 24px;
 }
 
 .view-more {
   display: inline-block;
   font-weight: 400;
   margin-left: 24px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
+  margin-top: 24px;
   font-size: 20px;
-  color: #000000;
+  color: #000;
   text-decoration: underline;
   position: relative;
   z-index: 1;
 }
 
+/* About */
 .about-section {
   display: grid;
   align-items: start;
@@ -277,7 +300,6 @@ a:hover {
   font-weight: 700;
   font-size: 40px;
   line-height: 1.15;
-  letter-spacing: .02em;
 }
 
 .about-content {
@@ -288,13 +310,14 @@ a:hover {
   margin: 0 0 16px;
   font-size: 20px;
   line-height: 24px;
-  color: black;
+  color: #000;
 }
 
 .about-text .second-paragraph {
   padding-top: 15px;
 }
 
+/* Footer */
 .site-footer {
   margin-top: 150px;
   padding: 28px 20px 40px;
@@ -357,7 +380,7 @@ a:hover {
   padding: 0;
   display: flex;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 48px;
 }
 
 .social-link {
@@ -371,6 +394,7 @@ a:hover {
   display: block;
   border-radius: 50%;
   padding: 8px;
-  background: #fff;
+  background: transparent;
+  border: 1px solid #000;
   box-sizing: border-box;
 }
